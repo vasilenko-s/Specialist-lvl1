@@ -5,9 +5,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $rows = abs((int) $_POST['rows']);
     $color = trim(strip_tags($_POST['color']));
 }
-$cols = ($cols) ? $cols : 10;
-$rows = ($rows) ? $rows : 10;
-$color = ($color) ? $color : 'yellow';
+      $cols = $cols ?? 10;
+      $rows = $rows ?? 10;
+      $color = $color ?? 'yellow';
 ?>
 
     <!-- Область основного контента -->

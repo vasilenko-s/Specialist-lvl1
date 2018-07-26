@@ -7,26 +7,32 @@ require_once 'inc/data.inc.php';
 $title = 'Сайт нашей школы';
 $header = "$welcome, Гость!";
 
-// Приём параметров из тела запроса и их фильтрация
-$id = strtolower(strip_tags(trim($_GET['id'])));
+//Инициализация переменной меню
+$id='';
 
-switch($id){
-    case 'about':
-        $title = 'О сайте';
-        $header = 'О нашем сайте';
-        break;
-    case 'contact':
-        $title = 'Контакты';
-        $header = 'Обратная связь';
-        break;
-    case 'table':
-        $title = 'Таблица умножения';
-        $header = 'Таблица умножения';
-        break;
-    case 'calc':
-        $title = 'Он-лайн калькулятор';
-        $header = 'Калькулятор';
-        break;
+// Приём параметров из тела запроса и их фильтрация
+
+if (isset($_GET['id'])) {
+    $id = strtolower(strip_tags(trim($_GET['id'])));
+    
+        switch($id){
+            case 'about':
+                $title = 'О сайте';
+                $header = 'О нашем сайте';
+                break;
+            case 'contact':
+                $title = 'Контакты';
+                $header = 'Обратная связь';
+                break;
+            case 'table':
+                $title = 'Таблица умножения';
+                $header = 'Таблица умножения';
+                break;
+            case 'calc':
+                $title = 'Он-лайн калькулятор';
+                $header = 'Калькулятор';
+                break;
+        }
 }
 ?>
 

@@ -2,7 +2,7 @@
 // Установка локали и выбор значений даты
 setlocale(LC_ALL, "russian");
 $day = strftime('%d');
-$mon = strftime('%B');
+$mon = strftime('%m');
 $year = strftime('%Y');
 
 /*
@@ -30,7 +30,7 @@ $leftMenu = [
 
 
 // текущее значение директивы post_max_size
-$size=ini_get(post_max_size);
+$size=ini_get('post_max_size');
 //Получаем информацию о величине размера данных
 $letter = $size{strlen($size)-1};
 
