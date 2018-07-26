@@ -7,13 +7,10 @@ require_once 'inc/data.inc.php';
 $title = 'Сайт нашей школы';
 $header = "$welcome, Гость!";
 
-//Инициализация переменной меню
-$id='';
 
 // Приём параметров из тела запроса и их фильтрация
-
-if (isset($_GET['id'])) {
-    $id = strtolower(strip_tags(trim($_GET['id'])));
+// Под Php v 7.0
+$id = strtolower(strip_tags(trim($_GET['id']))) ?? '';
     
         switch($id){
             case 'about':
@@ -33,7 +30,7 @@ if (isset($_GET['id'])) {
                 $header = 'Калькулятор';
                 break;
         }
-}
+
 ?>
 
 <!DOCTYPE html>
