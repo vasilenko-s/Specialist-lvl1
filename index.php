@@ -6,12 +6,10 @@ require_once 'inc/data.inc.php';
 // Инициализация заголовков страницы
 $title = 'Сайт нашей школы';
 $header = "$welcome, Гость!";
-$_GET['id']="";
 
+$_GET['id']=$_GET['id'] ?? '';
+$id = strtolower(strip_tags(trim($_GET['id'])));
 
-// Приём параметров из тела запроса и их фильтрация
-// Под Php v 7.0
-$id = strtolower(strip_tags(trim($_GET['id']))) ?? '';
     
         switch($id){
             case 'about':
